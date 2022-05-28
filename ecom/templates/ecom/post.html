@@ -1,0 +1,28 @@
+{% extends 'ecom/base.html' %}
+{% block content %}
+
+
+
+
+<div class="container">
+
+<div class="card mx-auto" style="width: 18rem;">
+    <img src="{{p.picture}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ p.name }}</h5>
+        <p class="card-text">{{ p.description }}.</p>
+        <p class="card-text">{{ p.price }}.</p>
+    </div>
+    
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col text-center my-5">
+    <a href="{% url 'cart' post_id=p.id %}"  class="btn btn-success btn-lg">Add to Cart</a>
+    <button type="button" class="btn btn-danger btn-sm">Dont buy it</button>
+        </div>
+    </div>
+</div>
+    
+</div>
+{% endblock%}
