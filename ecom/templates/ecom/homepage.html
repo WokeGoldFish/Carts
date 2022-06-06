@@ -4,7 +4,7 @@
 
 
 
-<div class="row mx-auto ">
+<div class="row ">
 {% for p in posts %}
 <a href="{% url 'single-post' post_id=p.id %}" class="card mx-auto text-dark text-decoration-none col-12 col-lg-4 " style="width: 18rem;">
     <img src="{{p.picture}}" class="card-img-top" alt="...">
