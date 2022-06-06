@@ -83,15 +83,11 @@ def singlePost(request, post_id):
 
 
 def addToCart(request, post_id):
-    try:
-        post = Post.object.get(id = post_id)
-    except:
-        post = Post()
-        post.save  
-
+    # try:
+    post = Post.objects.get(id = post_id)  
     join = Cart()
-    join.user = request.user
-    join.post = post
-    join.save
+    join.customer = request.user
+    join.product = post
+    join.save()
     
-    return redirect('cart')
+    return redirect('home')
